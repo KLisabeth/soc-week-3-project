@@ -3,7 +3,8 @@ debugger; // step through loading & testing
 
 // replace every occurrence of a substring with a new value
 function replaceSubstring(str, oldThing, newThing) {
-
+  str = str.split(oldThing).join(newThing);
+  return str;
 }
 
 // declare and evaluate test cases for replaceSubstring
@@ -31,11 +32,13 @@ function replaceSubstringHandler() {
   debugger; // step through user actions
 
   // read & process user input
-
+  const userText = prompt("enter your text")
+  const oldThing = prompt('enter what to change');
+  const newThing = prompt('enter what to replace');
   // execute core logic
-
+  const result = replaceSubstring(userText, oldThing, newThing);
   // display result to user
-
+  alert(result);
   // log action for developer
   console.log('\n-- replaceSubstring --');
   // user inputs
