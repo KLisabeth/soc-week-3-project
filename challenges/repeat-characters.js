@@ -12,13 +12,19 @@ debugger; // step through loading & testing
 //   return repetitions;
 // }
 function repeatCharacters(str, repetitions) {
+  if (isNaN(repetitions))
+   {
+     return 'repetitions must be a number';
+   }
+   else {
   let words = '';
 for (let char of str) {
     for (let i = 0; i < repetitions; i++){
      words += char
     }
-  }
+  } 
   return words
+}
 }
 // declare and evaluate test cases for repeatCharacters
 const repeatCharactersTests = [
@@ -44,12 +50,12 @@ function repeatCharactersHandler() {
   debugger; // step through user actions
   
   // read & process user input
-  const userText = prompt('enter some text');
-  const numRepeats = prompt('enter number of repeats');
+  
   const numRepeatsIsANumber = typeof numRepeats === 'number';
   console.assert(numRepeatsIsANumber, 'cast numRepeats to type "number"');
 
- 
+  const userText = prompt('enter some text');
+  const numRepeats = prompt('enter number of repeats');
   // execute core logic
   const result = repeatCharacters(userText, numRepeats);
   // display result to user
